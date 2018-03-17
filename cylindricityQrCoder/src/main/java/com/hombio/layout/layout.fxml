@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1058.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hombio.layout.LayoutController">
+   <children>
+      <TabPane prefHeight="749.0" prefWidth="1097.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="二维码变换">
+               <content>
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.4725378787878788" prefHeight="160.0" prefWidth="200.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="27.0" layoutY="15.0" text="内容" />
+                                    <Label layoutX="27.0" layoutY="197.0" text="底部文字说明" />
+                                    <RadioButton fx:id="horizontalRB" layoutX="178.0" layoutY="559.0" mnemonicParsing="false" text="横向" />
+                                    <RadioButton fx:id="verticalRB" layoutX="243.0" layoutY="559.0" mnemonicParsing="false" text="纵向" />
+                                    <Label layoutX="33.0" layoutY="511.0" text="焦点与切面距离(cm)" />
+                                    <Label fx:id="transLB" layoutX="33.0" layoutY="559.0" text="变形方向：" />
+                                    <Label fx:id="radiusLB" layoutX="33.0" layoutY="466.0" text="圆柱体半径(cm)" />
+                                    <TextArea fx:id="contentTA" layoutX="27.0" layoutY="43.0" prefHeight="140.0" prefWidth="454.0" />
+                                    <TextArea fx:id="bottomContentTA" layoutX="27.0" layoutY="217.0" prefHeight="110.0" prefWidth="453.0" />
+                                    <TextField fx:id="radiusTF" layoutX="170.0" layoutY="464.0" />
+                                    <TextField fx:id="focusTF" layoutX="170.0" layoutY="509.0" />
+                                    <Label layoutX="33.0" layoutY="416.0" text="二维码边长(cm)" />
+                                    <TextField fx:id="sideTF" layoutX="170.0" layoutY="414.0" onDragExited="#checkNumber" />
+                                    <Button layoutX="333.0" layoutY="599.0" mnemonicParsing="false" onAction="#form" prefHeight="54.0" prefWidth="115.0" text="生成" />
+                                    <Label layoutX="446.0" layoutY="-33.0" text="平面" />
+                                    <Label layoutX="451.0" layoutY="398.0" text="转换" />
+                                    <Label layoutX="379.0" layoutY="416.0" text="(*整数)" />
+                                    <Button layoutX="178.0" layoutY="598.0" mnemonicParsing="false" onAction="#saveImage" prefHeight="54.0" prefWidth="115.0" text="保存图片" />
+                                    <Label layoutX="33.0" layoutY="354.0" text="张贴物体：" />
+                                    <RadioButton fx:id="cylinderRB" layoutX="170.0" layoutY="354.0" mnemonicParsing="false" onAction="#selectCylinderRB" text="圆柱体" />
+                                    <RadioButton fx:id="globeRB" layoutX="254.0" layoutY="354.0" mnemonicParsing="false" onAction="#selectGlobeRB" text="球体" />
+                                 </children>
+                              </AnchorPane>
+                              <StackPane prefHeight="150.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.5022156573116692" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                      <items>
+                                          <ScrollPane prefHeight="332.0" prefViewportHeight="200.0" prefViewportWidth="200.0" prefWidth="462.0">
+                                             <content>
+                                                <StackPane layoutX="157.0" layoutY="68.0">
+                                                   <children>
+                                                      <ImageView fx:id="beforeImage" fitHeight="200.0" fitWidth="200.0" layoutX="157.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
+                                                   </children>
+                                                </StackPane>
+                                             </content>
+                                          </ScrollPane>
+                                          <ScrollPane prefHeight="324.0" prefViewportHeight="200.0" prefViewportWidth="200.0" prefWidth="464.0">
+                                             <content>
+                                                <StackPane layoutX="184.0" layoutY="82.0">
+                                                   <children>
+                                                      <ImageView fx:id="afterImage" fitHeight="200.0" fitWidth="200.0" layoutX="184.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" />
+                                                   </children>
+                                                </StackPane>
+                                             </content>
+                                          </ScrollPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </StackPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </StackPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</StackPane>
